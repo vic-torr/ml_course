@@ -1,0 +1,8 @@
+ 
+
+
+I wrote an Ebook in Jupyter Notebooks. I put each chapter in a separate Notebook. Then I converted a Notebook to HTML with nbconvert and then use wkhtmltopdf to convert it to PDF. The final step was to merge those PDFs with cpdf. This was the only way I was able to get page breaks in PDF.
+
+jupyter nbconvert --to html Chapter1.ipynb
+
+wkhtmltopdf --enable-internal-links -L 10mm -R 9.5mm -T 10mm -B 9.5mm Chapter1.html Chapter1.pdf
